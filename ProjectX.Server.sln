@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectX.Server.Host", "ProjectX.Server.Host\ProjectX.Server.Host.csproj", "{7741016D-6F2B-4995-9EEC-B621301A1D12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectX.Server.Database", "ProjectX.Server.Database\ProjectX.Server.Database.csproj", "{933882CE-6EEA-406D-ABEC-79EC2C18C401}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7741016D-6F2B-4995-9EEC-B621301A1D12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7741016D-6F2B-4995-9EEC-B621301A1D12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7741016D-6F2B-4995-9EEC-B621301A1D12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7741016D-6F2B-4995-9EEC-B621301A1D12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{933882CE-6EEA-406D-ABEC-79EC2C18C401}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{933882CE-6EEA-406D-ABEC-79EC2C18C401}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{933882CE-6EEA-406D-ABEC-79EC2C18C401}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{933882CE-6EEA-406D-ABEC-79EC2C18C401}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
