@@ -12,7 +12,7 @@ using ProjectX.Server.Database;
 namespace ProjectX.Server.Host.Migrations
 {
     [DbContext(typeof(PostgreSqlContext))]
-    [Migration("20240215135504_user")]
+    [Migration("20240215203442_user")]
     partial class user
     {
         /// <inheritdoc />

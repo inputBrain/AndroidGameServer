@@ -12,7 +12,7 @@ using ProjectX.Server.Database;
 namespace ProjectX.Server.Host.Migrations
 {
     [DbContext(typeof(PostgreSqlContext))]
-    [Migration("20240215135544_resource")]
+    [Migration("20240215203525_resource")]
     partial class resource
     {
         /// <inheritdoc />
@@ -91,7 +91,8 @@ namespace ProjectX.Server.Host.Migrations
 
             modelBuilder.Entity("ProjectX.Server.Database.User.UserModel", b =>
                 {
-                    b.Navigation("Resource");
+                    b.Navigation("Resource")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
