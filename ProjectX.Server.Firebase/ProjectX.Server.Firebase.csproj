@@ -5,4 +5,9 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="FirebaseAdmin" Version="2.4.0" />
+      <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+    </ItemGroup>
+
 </Project>
