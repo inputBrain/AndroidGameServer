@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectX.Server.Client.Code
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectX.Server.UseCase", "ProjectX.Server.UseCase\ProjectX.Server.UseCase.csproj", "{BFDC3894-8486-47D5-87F8-AEB40A8291D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectX.Server.Firebase", "ProjectX.Server.Firebase\ProjectX.Server.Firebase.csproj", "{3C263E68-F36F-4173-A87F-C742135A588E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{BFDC3894-8486-47D5-87F8-AEB40A8291D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFDC3894-8486-47D5-87F8-AEB40A8291D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFDC3894-8486-47D5-87F8-AEB40A8291D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C263E68-F36F-4173-A87F-C742135A588E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C263E68-F36F-4173-A87F-C742135A588E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C263E68-F36F-4173-A87F-C742135A588E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C263E68-F36F-4173-A87F-C742135A588E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
