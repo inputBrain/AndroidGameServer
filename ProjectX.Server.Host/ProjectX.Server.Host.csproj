@@ -13,7 +13,10 @@
     </ItemGroup>
     
     <ItemGroup>
+      <ProjectReference Include="..\ProjectX.Server.Client\ProjectX.Server.Client.csproj" />
       <ProjectReference Include="..\ProjectX.Server.Database\ProjectX.Server.Database.csproj" />
+      <ProjectReference Include="..\ProjectX.Server.Firebase\ProjectX.Server.Firebase.csproj" />
+      <ProjectReference Include="..\ProjectX.Server.UseCase\ProjectX.Server.UseCase.csproj" />
     </ItemGroup>
 
 </Project>
