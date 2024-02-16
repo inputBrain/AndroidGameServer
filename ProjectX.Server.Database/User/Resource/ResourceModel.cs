@@ -14,7 +14,23 @@ public class ResourceModel : AbstractModel
     [ForeignKey("UserId")]
     public UserModel User { get; set; }
     
-    public ResourceType ResourceType { get; set; }
+    public int Bronze { get; set; }
+    
+    public int Silver { get; set; }
+    
+    public int Gold { get; set; }
+    
+    public int DonatCrystal { get; set; }
 
-    public int Amount { get; set; }
+
+    public static ResourceModel CreateEmpty()
+    {
+        return new ResourceModel()
+        {
+            Bronze = 100,
+            Silver = 0,
+            Gold = 0,
+            DonatCrystal = 500
+        };
+    }
 }
