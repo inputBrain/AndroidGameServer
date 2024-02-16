@@ -12,5 +12,5 @@ public sealed class User
 
     public string AvatarUrl { get; set; }
     
-    public Resourse.Resourse Resourse { get; set; }
+    public Resource.Resource Resource { get; set; }
 }
