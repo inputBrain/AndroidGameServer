@@ -4,4 +4,9 @@
         <TargetFramework>net8.0</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\ProjectX.Server.Client\ProjectX.Server.Client.csproj" />
+      <ProjectReference Include="..\ProjectX.Server.Database\ProjectX.Server.Database.csproj" />
+    </ItemGroup>
+
 </Project>

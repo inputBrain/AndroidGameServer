@@ -2,6 +2,13 @@
 
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
     </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ProjectX.Server.Database\ProjectX.Server.Database.csproj" />
+      <ProjectReference Include="..\ProjectX.Server.Firebase\ProjectX.Server.Firebase.csproj" />
+      <ProjectReference Include="..\ProjectX.Server.Model\ProjectX.Server.Model.csproj" />
+    </ItemGroup>
 
 </Project>
