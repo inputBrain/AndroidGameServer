@@ -12,6 +12,7 @@ using Microsoft.OpenApi.Models;
 using ProjectX.Server.Client;
 using ProjectX.Server.Database;
 using ProjectX.Server.Firebase;
+using ProjectX.Server.UseCase;
 
 namespace ProjectX.Server.Host;
 
@@ -54,11 +55,11 @@ public class Startup
         
         services.AddScoped<IDatabaseContainer, DatabaseContainer>();
 
-        // services.AddScoped<IUseCaseContainer>(sp => Factory.Create(
-        //     _loggerFactory, 
-        //     sp.GetRequiredService<IDatabaseContainer>(), 
-        //     firebaseService)
-        // );
+        services.AddScoped<IUseCaseContainer>(sp => Factory.Create(
+            _loggerFactory, 
+            sp.GetRequiredService<IDatabaseContainer>(), 
+            firebaseService)
+        );
         
     }
 
