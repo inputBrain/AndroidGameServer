@@ -14,7 +14,7 @@ public abstract class AbstractRepository<T>(PostgreSqlContext context, ILoggerFa
     protected readonly PostgreSqlContext Context = context;
 
 
-    async protected Task<T> CreateModelAsync(T model)
+    async protected Task<T?> CreateModelAsync(T model)
     {
         await Context.AddAsync(model);
 

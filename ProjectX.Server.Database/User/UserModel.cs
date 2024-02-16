@@ -19,10 +19,25 @@ public class UserModel : AbstractModel
     public string? Phone { get; set; }
 
     public string? AvatarUrl { get; set; }
-    
+
     public ResourceModel Resource { get; set; }
-    
+
     public SocialIdentityModel SocialIdentity { get; set; }
-    
+
     public DateTime CreatedAt { get; set; }
+
+
+    public static UserModel CreateModel(string? firstName, string? lastName, string? phone, string? avatarUrl, DateTime createdAt)
+    {
+        return new UserModel()
+        {
+            FirstName = firstName,
+            LastName = lastName,
+            Phone = phone,
+            AvatarUrl = avatarUrl,
+            Resource = ResourceModel.CreateEmpty(),
+            SocialIdentity = new SocialIdentityModel(),
+            CreatedAt = createdAt,
+        };
+    }
 }
