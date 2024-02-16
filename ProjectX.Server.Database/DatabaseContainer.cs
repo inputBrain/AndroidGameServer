@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Logging;
+using ProjectX.Server.Database.SocialIdentity;
 using ProjectX.Server.Database.User;
 using ProjectX.Server.Database.User.Resource;
 
@@ -8,11 +9,13 @@ public class DatabaseContainer : IDatabaseContainer
 {
     public IUserRepository UserRepository { get; }
     public IResourceRepository ResourceRepository { get; }
-    
-    
+    public ISocialIdentityRepository SocialIdentityRepository { get; }
+
+
     public DatabaseContainer(PostgreSqlContext context, ILoggerFactory loggerFactory)
     {
         UserRepository = new UserRepository(context, loggerFactory);
         ResourceRepository = new ResourceRepository(context, loggerFactory);
+        SocialIdentityRepository = new SocialIdentityRepository(context, loggerFactory);
     }
 }
