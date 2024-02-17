@@ -22,6 +22,8 @@ public class FirebaseProvider
         {
             case "google.com":
                 return new FirebaseProvider(FirebaseProviderType.Google, providerUid);
+            case "password":
+                return new FirebaseProvider(FirebaseProviderType.EmailPassword, providerUid);
         }
         throw new ArgumentException("Error: tried to create provider with providerUid: " + providerUid);
     }
