@@ -8,7 +8,7 @@ namespace ProjectX.Server.Host.Controllers.Client;
 [ApiController]
 [Authorize]
 [Produces("application/json")]
-[Route("api/[action]/[controller]")]
+[Route("api/[controller]/[action]")]
 public abstract class AbstractClientController<T> : AbstractBaseController<T>
 {
     protected AbstractClientController(ILogger<T> logger, IUseCaseContainer useCase) : base(logger, useCase)
