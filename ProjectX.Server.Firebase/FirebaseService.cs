@@ -61,7 +61,7 @@ public class FirebaseService
             throw new ArgumentException("Firebase User encode error. ProviderData is null");
         }
 
-        var name = userRecord.DisplayName != null ? userRecord.DisplayName.Split(' ') : [""];
+        var name = (userRecord.DisplayName != null) ? userRecord.DisplayName.Split(' ') : new []{""};
 
         return new FirebaseUser(
             FirebaseProvider.Create(data.ProviderId, data.Uid),

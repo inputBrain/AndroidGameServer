@@ -14,7 +14,7 @@ public static class UserCodec
             LastName = dbModel.LastName,
             Phone = dbModel.Phone,
             AvatarUrl = dbModel.AvatarUrl,
-            Resource = ResourceCodec.EncodeResource(dbModel.Resource)
+            // Resource = ResourceCodec.EncodeResource(dbModel.Resource)
         };
     }
 }
