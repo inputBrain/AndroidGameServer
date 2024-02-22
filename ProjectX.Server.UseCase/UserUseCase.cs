@@ -27,8 +27,15 @@ public class UserUseCase(
         var user = await userRepository.FindByUid(socialUser.Uid);
         if (user == null)
         {
+            var socialType = SocialType.EmailPassword;
+            
             user = await userRepository.CreateModel(socialUser.FirstName, socialUser.LastName, socialUser.Phone, socialUser.AvatarUrl, DateTime.Now);
-            await socialIdentityRepository.Create(user.Id, socialUser.Uid, SocialType.Google, DateTime.Now);
+            
+            if (socialUser.FirebaseProvider.FirebaseProviderType == FirebaseProviderType.EmailPassword)
+            {
+                socialType = SocialType.EmailPassword;
+            }
+            await socialIdentityRepository.Create(user.Id, socialUser.Uid, socialType, DateTime.Now);
         }
 
         return user;
