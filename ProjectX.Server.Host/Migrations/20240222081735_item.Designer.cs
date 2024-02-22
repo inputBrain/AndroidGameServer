@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using ProjectX.Server.Database;
@@ -11,9 +12,11 @@ using ProjectX.Server.Database;
 namespace ProjectX.Server.Host.Migrations
 {
     [DbContext(typeof(PostgreSqlContext))]
-    partial class PostgreSqlContextModelSnapshot : ModelSnapshot
+    [Migration("20240222081735_item")]
+    partial class item
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,32 +43,6 @@ namespace ProjectX.Server.Host.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Item");
-                });
-
-            modelBuilder.Entity("ProjectX.Server.Database.ItemInventory.ItemInventoryModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("Amount")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("InventoryId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("ItemId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("InventoryId");
-
-                    b.HasIndex("ItemId");
-
-                    b.ToTable("ItemInventory");
                 });
 
             modelBuilder.Entity("ProjectX.Server.Database.SocialIdentity.SocialIdentityModel", b =>
@@ -175,25 +152,6 @@ namespace ProjectX.Server.Host.Migrations
                     b.ToTable("User");
                 });
 
-            modelBuilder.Entity("ProjectX.Server.Database.ItemInventory.ItemInventoryModel", b =>
-                {
-                    b.HasOne("ProjectX.Server.Database.User.Inventory.InventoryModel", "Inventory")
-                        .WithMany()
-                        .HasForeignKey("InventoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ProjectX.Server.Database.Item.ItemModel", "ItemModel")
-                        .WithMany("ItemInventory")
-                        .HasForeignKey("ItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Inventory");
-
-                    b.Navigation("ItemModel");
-                });
-
             modelBuilder.Entity("ProjectX.Server.Database.SocialIdentity.SocialIdentityModel", b =>
                 {
                     b.HasOne("ProjectX.Server.Database.User.UserModel", "User")
@@ -225,11 +183,6 @@ namespace ProjectX.Server.Host.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("ProjectX.Server.Database.Item.ItemModel", b =>
-                {
-                    b.Navigation("ItemInventory");
                 });
 
             modelBuilder.Entity("ProjectX.Server.Database.User.UserModel", b =>
