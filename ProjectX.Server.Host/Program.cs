@@ -3,7 +3,9 @@ using System.IO;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.CommandLineUtils;
 using Microsoft.Extensions.Configuration;
+using ProjectX.Server.Host.ConsoleCommands;
 
 namespace ProjectX.Server.Host;
 
@@ -14,6 +16,26 @@ public class Program
         AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
         var webHost = BuildWebHost(args);
+        var commandLineApplication = new CommandLineApplication(false);
+
+        var catapult = commandLineApplication.Command(
+            "command",
+            config =>
+            {
+                config.OnExecute(
+                    () =>
+                    {
+                        config.ShowHelp();
+                        return 1;
+                    }
+                );
+                config.HelpOption("-? | -h | --help");
+            }
+        );
+        
+        ImportCountries.Register(catapult, webHost);
+        
+        
         await InitWebServices(webHost);
             
     }
