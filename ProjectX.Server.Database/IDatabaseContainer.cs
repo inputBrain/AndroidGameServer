@@ -1,3 +1,4 @@
+using ProjectX.Server.Database.CountryTileData;
 using ProjectX.Server.Database.Item;
 using ProjectX.Server.Database.ItemInventory;
 using ProjectX.Server.Database.SocialIdentity;
@@ -15,5 +16,7 @@ public interface IDatabaseContainer
     IItemRepository ItemRepository { get; }
     IInventoryRepository InventoryRepository { get; }
     IItemInventoryRepository ItemInventoryRepository { get; }
+    
+    ICountryTileDataRepository CountryTileDataRepository { get; }
 
 }

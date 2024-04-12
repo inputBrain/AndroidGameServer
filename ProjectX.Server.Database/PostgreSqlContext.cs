@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using ProjectX.Server.Database.CountryTileData;
 using ProjectX.Server.Database.Item;
 using ProjectX.Server.Database.ItemInventory;
 using ProjectX.Server.Database.SocialIdentity;
@@ -21,6 +22,8 @@ public class PostgreSqlContext : DbContext
     public DbSet<InventoryModel> Inventory { get; set; }
     public DbSet<ItemModel> Item { get; set; }
     public DbSet<ItemInventoryModel> ItemInventory { get; set; }
+    
+    public DbSet<CountryTileDataModel> CountryTileData { get; set; }
 
 
     public PostgreSqlContext(DbContextOptions<PostgreSqlContext> options, ILoggerFactory loggerFactory) : base(options)

@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Logging;
+using ProjectX.Server.Database.CountryTileData;
 using ProjectX.Server.Database.Item;
 using ProjectX.Server.Database.ItemInventory;
 using ProjectX.Server.Database.SocialIdentity;
@@ -16,6 +17,8 @@ public class DatabaseContainer : IDatabaseContainer
     public IItemRepository ItemRepository { get; }
     public IInventoryRepository InventoryRepository { get; }
     public IItemInventoryRepository ItemInventoryRepository { get; }
+    
+    public ICountryTileDataRepository CountryTileDataRepository { get; }
 
 
     public DatabaseContainer(PostgreSqlContext context, ILoggerFactory loggerFactory)
@@ -26,5 +29,6 @@ public class DatabaseContainer : IDatabaseContainer
         ItemRepository = new ItemRepository(context, loggerFactory);
         InventoryRepository = new InventoryRepository(context, loggerFactory);
         ItemInventoryRepository = new ItemInventoryRepository(context, loggerFactory);
+        CountryTileDataRepository = new CountryTileDataRepository(context, loggerFactory);
     }
 }
